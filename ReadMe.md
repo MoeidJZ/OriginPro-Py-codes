@@ -1,6 +1,6 @@
 # OriginPro Integration: Superconducting Resonator Analysis & Fitting
 
-This repository contains a suite of Python scripts designed exclusively to run inside **OriginPro's embedded Python environment**. These tools bridge the gap between automated data extraction (from the QREs fitting suite) and Origin's powerful graphing and data management capabilities.
+This repository contains a suite of Python scripts designed exclusively to run inside **OriginPro's embedded Python environment**. These tools bridge the gap between automated data extraction (from the QRES fitting suite) and Origin's powerful graphing and data management capabilities.
 
 With these scripts, you can seamlessly import wideband $S_{21}$ sweeps, dynamically organize data into multidimensional matrices, and utilize advanced GUI-driven fitting algorithms for Two-Level System (TLS) loss, power-dependent loss, and quasiparticle resonance shifts.
 
@@ -14,8 +14,8 @@ A sample OriginPro project file, **`Sample_OriginPro_ResonatorData.opju`**, is i
 To use these scripts, you must run them from within OriginPro (Version 2021 or later is recommended, as it includes a fully embedded Python interpreter).
 
 ### How to Open Python in OriginPro
-1. **Script Window:** Go to `Window` > `Script Window` (or press `Shift + Alt + 3`). You can type Python code directly here by prefixing it with `py` (e.g., `py import numpy`).
-2. **Code Builder (Recommended):** Press `F10` or go to `View` > `Code Builder`. This opens a full IDE where you can open, edit, and run the `.py` scripts provided in this repository. Ensure the language drop-down at the top of the Code Builder is set to `Python`.
+1. **Script Window:** Go to `Connectivity` > `Open untitled.py` to make a new file or press `Open` to open a certain python file.
+2. **Code Builder (Recommended):** Go to `View` > `Code Builder`. This opens a full IDE where you can open, edit, and run the `.py` scripts provided in this repository. Ensure the language drop-down at the top of the Code Builder is set to `Python`.
 
 ### Installing Required Libraries
 These scripts require external scientific libraries that are not packaged with Origin's default Python installation. 
@@ -42,8 +42,8 @@ The 9 scripts in this repository are divided into three workflow categories: **D
 These scripts structure the raw CSV outputs from Part 3 into organized Origin workbooks.
 
 **1. `Import_Res_Data.py`**
-* **Function:** Imports CSV files exported from the Probst GUI and builds a structured Origin workbook for each resonator.
-* **Structure:** Creates a new workbook per resonator. Inside the workbook, it creates a new worksheet for each temperature. Different measurement powers are arranged in rows. 
+* **Function:** Imports CSV files exported from the Probst or QRES GUI and builds a structured Origin workbook for each resonator.
+* **Structure:** Creates a new workbook per resonator. Inside the workbook, it creates a new worksheet for each temperature. Different measurement powers are arranged in rows. It also adds new columsn to calculate loss and loss errors from Qi and Qi_err columns.
 * **User Inputs:** `CSV_FOLDER` (path to data) and `CSV_FILES` (list of files to import).
 
 **2. `Comment_set_for_Qi.py` (Optional Utility)**
